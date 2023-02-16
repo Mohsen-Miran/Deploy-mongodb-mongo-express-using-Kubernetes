@@ -1,0 +1,49 @@
+kubectl get nodes -o wide
+kubectl get pods -o wide
+kubectl delete deployments --all
+kubectl delete services --all
+
+
+kubectl apply -f secret.yaml
+kubectl get secret
+
+
+kubectl apply -f mongodb.yaml
+kubectl get svc
+kubectl describe services mongo-service
+kubectl get deployment
+kubectl describe deployment mongo-deployment
+kubectl get pods -o wide
+
+kubectl apply -f mongo-config.yaml
+kubectl get ConfigMap
+kubectl describe ConfigMap mongo-config
+
+kubectl apply -f web-app.yaml
+kubectl get svc
+kubectl describe services webapp-service
+kubectl get deployment
+kubectl describe deployment webapp-deployment
+kubectl get pods -o wide
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

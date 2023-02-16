@@ -1,0 +1,30 @@
+sudo nano /etc/nginx/sites-enabled/default
+
+location / {
+# First attempt to serve request as file, then
+# as directory, then fall back to displaying a 404.
+proxy_pass http://<minikube IP>:<svc port>;
+
+
+Once that's done, we can restart Nginx:
+sudo systemctl restart nginx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
