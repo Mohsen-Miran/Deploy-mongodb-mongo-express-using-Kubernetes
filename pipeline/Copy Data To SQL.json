@@ -46,7 +46,7 @@
 						"referenceName": "InputeCSV",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "plane.csv"
+							"fileName": "planes.csv"
 						}
 					}
 				],
