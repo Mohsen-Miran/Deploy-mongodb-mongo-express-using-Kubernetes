@@ -113,7 +113,10 @@
 						"referenceName": "OutputTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "planes"
+							"tableName": {
+								"value": "@pipeline().parameters.tableName",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -123,7 +126,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": {
-								"value": "@concat('planes-',utcnow(),'.csv')",
+								"value": "@concat('pipeline().parameters.fileName',utcnow(),'.csv')",
 								"type": "Expression"
 							}
 						}
@@ -131,6 +134,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			},
+			"tableName": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
