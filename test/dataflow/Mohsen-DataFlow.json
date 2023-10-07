@@ -1,0 +1,37 @@
+{
+	"name": "Mohsen-DataFlow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "CarsCSV",
+						"type": "DatasetReference"
+					},
+					"name": "Cars"
+				},
+				{
+					"name": "curatedsql"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Make as string,",
+				"          Model as string,",
+				"          Type as string,",
+				"          Origin as string,",
+				"          DriveTrain as string,",
+				"          Length as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Cars",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> curatedsql"
+			]
+		}
+	}
+}
