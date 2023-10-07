@@ -147,6 +147,11 @@
 				"type": "string"
 			}
 		},
+		"variables": {
+			"Temp": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
