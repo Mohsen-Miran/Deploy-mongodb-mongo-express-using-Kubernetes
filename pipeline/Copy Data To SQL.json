@@ -6,7 +6,14 @@
 				"name": "CopyCSVToTable",
 				"description": "Copy from a CSV file to a SQL table",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy SQL To CSV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -45,10 +52,7 @@
 				"inputs": [
 					{
 						"referenceName": "InputeCSV",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": "cars.csv"
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
@@ -103,17 +107,37 @@
 				"inputs": [
 					{
 						"referenceName": "OutputTable",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tableName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "InputeCSV",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": {
+								"value": "@concat(pipeline().parameters.tableName,'-',utcnow(),'.csv')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			},
+			"tableName": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
