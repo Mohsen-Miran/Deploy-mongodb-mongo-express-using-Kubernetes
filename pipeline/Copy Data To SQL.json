@@ -7,7 +7,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Copy data2",
+						"activity": "CopyTableToCSV",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -68,7 +68,8 @@
 				]
 			},
 			{
-				"name": "Copy data2",
+				"name": "CopyTableToCSV",
+				"description": "Copy from SQL table to a CSV with dynamic content",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
