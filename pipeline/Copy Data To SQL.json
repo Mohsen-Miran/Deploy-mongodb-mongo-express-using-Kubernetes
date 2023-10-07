@@ -132,7 +132,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": {
-								"value": "@concat('pipeline().parameters.fileName',utcnow(),'.csv')",
+								"value": "@concat(pipeline().parameters.fileName,'-',utcnow(),'.csv')",
 								"type": "Expression"
 							}
 						}
