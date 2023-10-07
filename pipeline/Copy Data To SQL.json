@@ -6,14 +6,7 @@
 				"name": "CopyCSVToTable",
 				"description": "Copy from a CSV file to a SQL table",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "CopyTableToCSV",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -54,10 +47,7 @@
 						"referenceName": "InputeCSV",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": {
-								"value": "@pipeline().parameters.fileName",
-								"type": "Expression"
-							}
+							"fileName": "cars.csv"
 						}
 					}
 				],
@@ -66,17 +56,13 @@
 						"referenceName": "OutputTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": {
-								"value": "@pipeline().parameters.tableName",
-								"type": "Expression"
-							}
+							"tableName": "Cars"
 						}
 					}
 				]
 			},
 			{
-				"name": "CopyTableToCSV",
-				"description": "Copy from SQL table to a CSV with dynamic content",
+				"name": "Copy SQL To CSV",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -117,25 +103,13 @@
 				"inputs": [
 					{
 						"referenceName": "OutputTable",
-						"type": "DatasetReference",
-						"parameters": {
-							"tableName": {
-								"value": "@pipeline().parameters.tableName",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "InputeCSV",
-						"type": "DatasetReference",
-						"parameters": {
-							"fileName": {
-								"value": "@concat(pipeline().parameters.fileName,'-',utcnow(),'.csv')",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}
