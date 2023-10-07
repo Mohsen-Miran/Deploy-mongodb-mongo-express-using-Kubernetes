@@ -43,7 +43,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CarsCSV",
+						"referenceName": "InputeCSV",
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": "cars.csv"
@@ -52,7 +52,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "SQLCarsTable",
+						"referenceName": "OutputTable",
 						"type": "DatasetReference",
 						"parameters": {
 							"tableName": "cars"

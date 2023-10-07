@@ -1,5 +1,5 @@
 {
-	"name": "SQLCarsTable",
+	"name": "OutputTable",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "mohsen1985_sqlsrv1_Connection",
