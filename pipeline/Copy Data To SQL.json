@@ -52,7 +52,13 @@
 				"inputs": [
 					{
 						"referenceName": "InputeCSV",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
@@ -60,7 +66,10 @@
 						"referenceName": "OutputTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "Cars"
+							"tableName": {
+								"value": "@pipeline().parameters.tableName",
+								"type": "Expression"
+							}
 						}
 					}
 				]
