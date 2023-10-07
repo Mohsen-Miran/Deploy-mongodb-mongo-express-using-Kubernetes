@@ -55,7 +55,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"fileName": {
-								"value": "@pipeline().parameters.tableName",
+								"value": "@pipeline().parameters.fileName",
 								"type": "Expression"
 							}
 						}
