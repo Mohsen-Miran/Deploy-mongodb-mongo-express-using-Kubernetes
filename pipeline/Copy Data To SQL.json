@@ -54,7 +54,10 @@
 						"referenceName": "InputeCSV",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "planes.csv"
+							"fileName": {
+								"value": "@pipeline().parameters.fileName",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -63,7 +66,10 @@
 						"referenceName": "OutputTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "planes"
+							"tableName": {
+								"value": "@pipeline().parameters.tableName",
+								"type": "Expression"
+							}
 						}
 					}
 				]
