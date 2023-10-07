@@ -44,13 +44,19 @@
 				"inputs": [
 					{
 						"referenceName": "CarsCSV",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"fileName": "cars.csv"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "SQLCarsTable",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tableName": "cars"
+						}
 					}
 				]
 			}
