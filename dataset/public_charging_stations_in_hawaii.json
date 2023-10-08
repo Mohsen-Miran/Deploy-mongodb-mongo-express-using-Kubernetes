@@ -1,0 +1,76 @@
+{
+	"name": "public_charging_stations_in_hawaii",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mohsen1985_blob_Connection",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "public-charging-stations-in-hawaii-csv.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Island",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "Zip Code",
+				"type": "String"
+			},
+			{
+				"name": "Facility",
+				"type": "String"
+			},
+			{
+				"name": "Parking Lot",
+				"type": "String"
+			},
+			{
+				"name": "Charger Location",
+				"type": "String"
+			},
+			{
+				"name": "Station Availability (Hours)",
+				"type": "String"
+			},
+			{
+				"name": "Number of Chargers",
+				"type": "String"
+			},
+			{
+				"name": "Number of Ports",
+				"type": "String"
+			},
+			{
+				"name": "Charger Level",
+				"type": "String"
+			},
+			{
+				"name": "Charge Fee",
+				"type": "String"
+			},
+			{
+				"name": "Manufacturer",
+				"type": "String"
+			},
+			{
+				"name": "Notes",
+				"type": "String"
+			}
+		]
+	}
+}
